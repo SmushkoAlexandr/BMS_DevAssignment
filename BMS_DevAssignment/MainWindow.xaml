@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BMS_DevAssignment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="BMS_Dev_Assignment" Height="350" Width="526.666">
     <Grid>
-        
+        <Button x:Name="buttonBrowse" Content="Browse" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="75" Click="buttonBrowse_Click" RenderTransformOrigin="0.8,0.717"/>
+        <Label x:Name="lblPath" Content="Browse a *.txt file" HorizontalAlignment="Left" Margin="90,22,0,0" VerticalAlignment="Top" Width="179"/>
+        <TextBox x:Name="txtMain" HorizontalAlignment="Left" Height="230" Margin="27,64,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="179"/>
+        <Rectangle Fill="#FFB0B0B0" HorizontalAlignment="Left" Height="89" Margin="232,96,0,0" Stroke="#FFB0B0B0" VerticalAlignment="Top" Width="113"/>
+        <Rectangle Fill="#FFB0B0B0" HorizontalAlignment="Left" Height="89" Margin="383,96,0,0" Stroke="#FFB0B0B0" VerticalAlignment="Top" Width="113"/>
+        <Label Content="Number of n-count words" HorizontalAlignment="Left" Margin="215,68,0,0" VerticalAlignment="Top" Width="160" Height="23"/>
+        <Label Content="Number of letter's repeat&#xD;&#xA;" HorizontalAlignment="Left" Margin="369,68,0,0" VerticalAlignment="Top" Height="28"/>
+        <TextBox x:Name="txtNCount" HorizontalAlignment="Left" Height="28" Margin="241,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.258,0.696" FontSize="8" Tag=""/>
+        <TextBox x:Name="txtLetterRepeat" HorizontalAlignment="Left" Height="28" Margin="392,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.258,0.696" FontSize="8" Tag=""/>
+        <Label x:Name="lblNResult" Content="Result" HorizontalAlignment="Left" Margin="270,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,1.385"/>
+        <Label x:Name="lblLetterResult" Content="Result" HorizontalAlignment="Left" Margin="421,152,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="buttonCount" Content="Count" HorizontalAlignment="Left" Margin="328,200,0,0" VerticalAlignment="Top" Width="75" Click="buttonCount_Click"/>
+
     </Grid>
 </Window>
