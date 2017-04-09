@@ -29,24 +29,33 @@ namespace BMS_DevAssignment
 
         private void buttonBrowse_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "Text Files|*.txt";
-            openFile.Title = "Select a Text File";
+            Tuple<string, string> getValue = CountClass.OpenFile();
 
-            Nullable<bool> result = openFile.ShowDialog();
+            txtMain.Text = getValue.Item1;
+            lblPath.Content = getValue.Item2;
+        }
 
-            if (result == true)
+         private void buttonCount_Click(object sender, RoutedEventArgs e)
+        {         
+            try
             {
-                Console.WriteLine(openFile.FileName);
-                lblPath.Content = openFile.FileName;
-                txtMain.Text = File.ReadAllText(openFile.FileName, Encoding.UTF8);
+                lblNResult.Content = CountClass.GetWordsByLength(txtMain.Text, Int32.Parse(txtNCount.Text));
+                lblLetterResult.Content = CountClass.GetCharacterOccurrences(txtMain.Text, Convert.ToChar(txtLetterRepeat.Text));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Format Exception. Please, check entered data.");
             }
         }
 
-        private void buttonCount_Click(object sender, RoutedEventArgs e)
+        private void cbEditText_Checked(object sender, RoutedEventArgs e)
         {
-            lblNResult.Content = CountClass.GetWordsByLength(txtMain.Text, Int32.Parse(txtNCount.Text));
+            txtMain.IsReadOnly = false;
+        }
 
+        private void cbEditText_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtMain.IsReadOnly = true;
         }
     }
 }
