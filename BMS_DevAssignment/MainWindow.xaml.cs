@@ -30,9 +30,12 @@ namespace BMS_DevAssignment
         private void buttonBrowse_Click(object sender, RoutedEventArgs e)
         {
             Tuple<string, string> getValue = CountClass.OpenFile();
-
-            txtMain.Text = getValue.Item1;
-            lblPath.Content = getValue.Item2;
+            try
+            {
+                txtMain.Text = getValue.Item1;
+                lblPath.Content = getValue.Item2;
+            }
+            catch (System.NullReferenceException) { }
         }
 
          private void buttonCount_Click(object sender, RoutedEventArgs e)
