@@ -24,7 +24,7 @@ namespace BMS_DevAssignment
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void buttonBrowse_Click(object sender, RoutedEventArgs e)
@@ -57,5 +57,7 @@ namespace BMS_DevAssignment
         {
             txtMain.IsReadOnly = true;
         }
+
+
     }
 }

@@ -13,22 +13,6 @@ namespace BMS_DevAssignment_Test
         int expected, actual;
 
         [TestMethod]
-        public void DialogIsShown()
-        {
-            using (var context = ShimsContext.Create())
-            {
-                Nullable<bool> b2 = true;
-                ShimCommonDialog.AllInstances.ShowDialog = (x) => b2;
-
-                var sut = new Sut();
-
-                var r = sut.SomeMethod();
-
-                Assert.IsTrue(r);
-            }
-        }
-
-        [TestMethod]
         public void GetWordsByLength_LoremIpsum_5characters_()
         {
             //arrange
@@ -46,7 +30,7 @@ namespace BMS_DevAssignment_Test
         [TestMethod]
         public void GetCharacterOccurrences_LoremIpsum_L_8charakter()
         {
-            expected = 7;
+            expected = 8;
 
             actual = CountClass.GetCharacterOccurrences(loremIpsum, 'l');
 

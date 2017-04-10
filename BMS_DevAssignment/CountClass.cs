@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace BMS_DevAssignment
 {
+
     public class CountClass
     {
-
-
         public static Tuple<string, string> OpenFile()
         {
+            
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "Text Files|*.txt";
             openFile.Title = "Select a Text File";
@@ -39,7 +39,7 @@ namespace BMS_DevAssignment
 
         public static int GetCharacterOccurrences(String file, Char character)
         {
-            return file.Count(x => x == character);
+            return file.Count(x => char.ToLower(x) == char.ToLower(character));
         }
     }
 }
